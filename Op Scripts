@@ -261,8 +261,8 @@ createSetting("Da Hood").MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/nighter132/Faded/main/YesEpic", true))()
 end)
 
-createSetting("--").MouseButton1Down:connect(function()
-    
+createSetting("Pet Simulator").MouseButton1Down:connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/si1nnx/psxx/main/g"))()
 end)
 
 createSetting("--").MouseButton1Down:connect(function()
