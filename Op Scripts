@@ -265,8 +265,8 @@ createSetting("Pet Simulator").MouseButton1Down:connect(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/si1nnx/psxx/main/g"))()
 end)
 
-createSetting("--").MouseButton1Down:connect(function()
-        
+createSetting("chat bypasser").MouseButton1Down:connect(function()
+        loadstring(game:HttpGet("https://the-shed.dev/scripts/sbp.lua", true))()
 end)
 
 createSetting("--").MouseButton1Down:connect(function()
