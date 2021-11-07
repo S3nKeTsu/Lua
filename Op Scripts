@@ -19,14 +19,14 @@ Text = "GUI Loaded - G to Hide/Show"; -- what the text says (ofc)
 Duration = 5; -- how long the notification should in secounds
 })
 
-wait()
+wait(2)
 game.StarterGui:SetCore("SendNotification", {
 Title = "Updatet"; -- the title (ofc)
 Text = "Updated: 11/07/2021"; -- what the text says (ofc)
 Duration = 5; -- how long the notification should in secounds
 })
 
-wait()
+wait(3)
 game.StarterGui:SetCore("SendNotification", {
 Title = "Warning!"; -- the title (ofc)
 Text = "Bypass chat not whit you main! you can get baned!"; -- what the text says (ofc)
