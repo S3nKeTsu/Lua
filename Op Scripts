@@ -22,7 +22,7 @@ Duration = 5; -- how long the notification should in secounds
 wait(2)
 game.StarterGui:SetCore("SendNotification", {
 Title = "Updatet"; -- the title (ofc)
-Text = "Updated: 11/07/2021"; -- what the text says (ofc)
+Text = "I'm working on a new update, an improved GUI and better functions"; -- what the text says (ofc)
 Duration = 5; -- how long the notification should in secounds
 })
 
