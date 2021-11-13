@@ -73,4 +73,3 @@ local Update = {
 
 local dropdown = creditsSection:NewDropdown("Update!","here can you see the update date!", Update, function()
 end)
-
