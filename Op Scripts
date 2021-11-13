@@ -1,20 +1,13 @@
-wait(2)
-game.StarterGui:SetCore("SendNotification", {
-Title = "new update!!"; -- the title (ofc)
-Text = "This the SenKeTs Hub!! "; -- what the text says (ofc)
-Duration = 5; -- how long the notification should in secounds
-})
-
 --place list
 if game.PlaceId == 142823291 then
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/eplice/main/hub"))()
 end
 
-if game.PlaceId == 2788229376 then
+elseif game.PlaceId == 2788229376 then
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nighter132/Faded/main/YesEpic", true))()
 end
 
-if game.PlaceId == 1599679393 then
+elseif game.PlaceId == 1599679393 then
 local Library =  loadstring(game:HttpGet("https://raw.githubusercontent.com/si1nnx/psxx/main/g"))()
 end
 
