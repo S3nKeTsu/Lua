@@ -31,7 +31,7 @@ local Scripts = Window:NewTab("Script's")
 local ScriptsSection = Scripts:NewSection("Scripts")
 local Hublist = {
   "Eplice Hub",
-  "D hood Fade",
+  "Da hood Fade",
   "Pet sim x"
 }
 
