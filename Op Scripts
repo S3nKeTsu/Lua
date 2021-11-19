@@ -44,10 +44,16 @@ ScriptsSection:NewButton("Infinitie Yield", "this is a admin script", function()
     print("Clicked")
 end)
 
-ScriptsSection:NewButton("Pizza place gui", "Turk0yun Script", function()
+ScriptsSection:NewButton("Pizza place gui", "Turk0yun Scripts", function()
         loadstring(game:HttpGet("https://gist.githubusercontent.com/TurkOyuncu99/bb2f1182a224999682a2d1a87aa8517a/raw/66c7791224be0434b23938ca26244238649d0143/ameicaa", true))()
     print("Clicked")
 end)
+
+ScriptsSection:NewButton("Mm2 gui", "Turk0yun Scripts", function()
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/TurkOyuncu99/16d946bfe0a0ed98a8e32de362fd4217/raw/0681fa979da042841f4e71a52490fdc3a2a16376/cac", true))()
+    print("Clicked")
+end)
+
 
 ScriptsSection:NewButton("Bypassed chat", "WARN! YOU CAN GET BANNED!!", function()
         loadstring(game:HttpGet("https://the-shed.dev/scripts/sbp.lua", true))()
