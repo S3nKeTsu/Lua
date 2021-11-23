@@ -1,21 +1,19 @@
 --place list
 if game.PlaceId == 142823291 then
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/eplice/main/hub"))()
-end
+end)
 
 if game.PlaceId == 2414851778 then
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Solx69/Shit-Boy-Hub-Main/main/Master.lua", true))()
-end
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Solx69/Shit-Boy-Hub-Main/main/Master.lua', true))()
+end)
 
 if game.PlaceId == 2788229376 then
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nighter132/Faded/main/YesEpic", true))()
-end
+end)
 
 if game.PlaceId == 1599679393 then
 local Library =  loadstring(game:HttpGet("https://raw.githubusercontent.com/si1nnx/psxx/main/g"))()
-end
-
-if game.PlaceId == 0 then
+end)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/Library/main/Libray"))()
 local Window = Library.CreateLib("SEnKeTs Hub", "DarkTheme")
