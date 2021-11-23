@@ -15,6 +15,8 @@ if game.PlaceId == 1599679393 then
 local Library =  loadstring(game:HttpGet("https://raw.githubusercontent.com/si1nnx/psxx/main/g"))()
 end
 
+if game.PlaceId == 0 then
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/Library/main/Libray"))()
 local Window = Library.CreateLib("SEnKeTs Hub", "DarkTheme")
 
