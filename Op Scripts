@@ -139,11 +139,6 @@ if game.PlaceId == 2414851778 then
      end)
 end
 
-ScriptsSection:NewButton("Bypassed chat", "WARN! YOU CAN GET BANNED!!", function()
-        loadstring(game:HttpGet("https://the-shed.dev/scripts/sbp.lua", true))()
-    print("Clicked")
-end)
-
 if game.PlaceId == 192800 then
      --Teleport--
      local Teleport = Window:NewTab("Teleport")
@@ -211,4 +206,22 @@ local Update = {
 }
 
 local dropdown = creditsSection:NewDropdown("Update!","here can you see the update date!", Update, function()
+end)
+
+local UpdatePizza = {
+  "*Turk0yun Gui",
+  "*Teleports"
+  
+}
+
+local dropdown = creditsSection:NewDropdown("new Pizza place","here see you the Work at the Pizza Place Update!", UpdatePizza, function()
+end)
+
+local UpdateMm2 = {
+  "*Turk0yun Gui",
+  "*Eplice Hub"
+  
+}
+
+local dropdown = creditsSection:NewDropdown("new Murder mystery 2","here see you the murder mystery 2 Update!", Updatemm2, function()
 end)
