@@ -124,9 +124,10 @@ if game.PlaceId == 2414851778 then
      print("Clicked")
      end)
 end
+
 --da hood
 if game.PlaceId == 2788229376 then
-     ScriptsSection:NewButton("Faded", "this is the Da Hood Script Gui!"", function()
+     ScriptsSection:NewButton("Faded", "this is the Da Hood Script Gui!", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/nighter132/Faded/main/YesEpic", true))()
      print("Clicked")
      end)
@@ -233,4 +234,3 @@ local Updatedahood = {
 
 local dropdown = creditsSection:NewDropdown("new Da hood","here see you the Da Hood Update!", Updatedahood, function()
 end)
-
