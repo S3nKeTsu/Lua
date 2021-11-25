@@ -110,26 +110,26 @@ end)
 
 if game.PlaceId == 192800 then
 
-ScriptsSection:NewButton("Pizza place gui", "Turk0yun Scripts", function()
-        loadstring(game:HttpGet("https://gist.githubusercontent.com/TurkOyuncu99/bb2f1182a224999682a2d1a87aa8517a/raw/66c7791224be0434b23938ca26244238649d0143/ameicaa", true))()
-    print("Clicked")
-end)
+     ScriptsSection:NewButton("Pizza place gui", "Turk0yun Scripts", function()
+          loadstring(game:HttpGet("https://gist.githubusercontent.com/TurkOyuncu99/bb2f1182a224999682a2d1a87aa8517a/raw/66c7791224be0434b23938ca26244238649d0143/ameicaa", true))()
+      print("Clicked")
+     end)
+end
 
 if game.PlaceId == 142823291 then
 
-ScriptsSection:NewButton("Mm2 gui", "Turk0yun Scripts", function()
-        loadstring(game:HttpGet("https://gist.githubusercontent.com/TurkOyuncu99/16d946bfe0a0ed98a8e32de362fd4217/raw/0681fa979da042841f4e71a52490fdc3a2a16376/cac", true))()
+     ScriptsSection:NewButton("Mm2 gui", "Turk0yun Scripts", function()
+           loadstring(game:HttpGet("https://gist.githubusercontent.com/TurkOyuncu99/16d946bfe0a0ed98a8e32de362fd4217/raw/0681fa979da042841f4e71a52490fdc3a2a16376/cac", true))()
     print("Clicked")
-end)
+     end)
+end
 
 if game.PlaceId == 2414851778 then
-
-
-ScriptsSection:NewButton("Dungeon Quest", "Dungeon Quest Gui script", function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Solx69/Shit-Boy-Hub-Main/main/Master.lua'))();
-    print("Clicked")
-end)
-
+     ScriptsSection:NewButton("Dungeon Quest", "Dungeon Quest Gui script", function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Solx69/Shit-Boy-Hub-Main/main/Master.lua'))();
+     print("Clicked")
+     end)
+end
 
 ScriptsSection:NewButton("Bypassed chat", "WARN! YOU CAN GET BANNED!!", function()
         loadstring(game:HttpGet("https://the-shed.dev/scripts/sbp.lua", true))()
@@ -137,54 +137,54 @@ ScriptsSection:NewButton("Bypassed chat", "WARN! YOU CAN GET BANNED!!", function
 end)
 
 if game.PlaceId == 192800 then
+     --Teleport--
+     local Teleport = Window:NewTab("Teleport")
+     local TeleportSection = Teleport:NewSection("Teleports")
 
---Teleport--
-local Teleport = Window:NewTab("Teleport")
-local TeleportSection = Teleport:NewSection("Teleports")
+     TeleportSection:NewButton("Home", "teleport to your house", function()
+         local args = {
+         [1] = "TeleportHome"
+     }
 
-TeleportSection:NewButton("Home", "teleport to your house", function()
-    local args = {
-    [1] = "TeleportHome"
-}
+     game:GetService("ReplicatedStorage").PlayerChannel:FireServer(unpack(args))
+         print("Clicked")
+     end)
 
-game:GetService("ReplicatedStorage").PlayerChannel:FireServer(unpack(args))
-    print("Clicked")
-end)
+     TeleportSection:NewButton("Starting Zone", "teleport your Starting Zone", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(49, 3, 198)
+         print("Clicked")
+     end)
 
-TeleportSection:NewButton("Starting Zone", "teleport your Starting Zone", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(49, 3, 198)
-    print("Clicked")
-end)
+     TeleportSection:NewButton("Cashier Area", "teleport your Cashier Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(48, 4, 80)
+         print("Clicked")
+     end)
 
-TeleportSection:NewButton("Cashier Area", "teleport your Cashier Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(48, 4, 80)
-    print("Clicked")
-end)
-
-TeleportSection:NewButton("Cook Area", "teleport your Cook Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(42, 4, 61)
-end)
+     TeleportSection:NewButton("Cook Area", "teleport your Cook Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(42, 4, 61)
+     end)
 
 
-TeleportSection:NewButton("Manager Area", "teleport your Manager Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(37, 4, 3)
-    print("Clicked")
-end)
+     TeleportSection:NewButton("Manager Area", "teleport your Manager Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(37, 4, 3)
+         print("Clicked")
+     end)
 
-TeleportSection:NewButton("Boxer Area", "teleport your Boxer Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(55, 4, 31)
-    print("Clicked")
-end)
+     TeleportSection:NewButton("Boxer Area", "teleport your Boxer Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(55, 4, 31)
+         print("Clicked")
+     end)
 
-TeleportSection:NewButton("Supplier Area", "teleport your Supplier Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8, 13, -1020)
-    print("Clicked")
-end)
+     TeleportSection:NewButton("Supplier Area", "teleport your Supplier Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8, 13, -1020)
+         print("Clicked")
+     end)
 
-TeleportSection:NewButton("Delivery Area", "teleport your Delivery Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(64, 4, -17)
-    print("Clicked")
-end)
+     TeleportSection:NewButton("Delivery Area", "teleport your Delivery Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(64, 4, -17)
+         print("Clicked")
+     end)
+end
 
 --Settings
 local Settings = Window:NewTab("Settings")
