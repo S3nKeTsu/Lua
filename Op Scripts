@@ -1,11 +1,19 @@
 
 wait(1)
 game.StarterGui:SetCore("SendNotification", {
-Title = "New Update"; -- the title (ofc)
-Text = "I have a new update für the Place! "; -- what the text says (ofc)
+Title = "Hello my name is SenKeTs"; -- the title (ofc)
+Text = "I hope your like my new Gui and wehn you have ask then add me S3nKeTsu#6565"; -- what the text says (ofc)
 Duration = 5; -- how long the notification should in secounds
 })
 
+wait(2)
+game.StarterGui:SetCore("SendNotification", {
+Title = "New Update"; -- the title (ofc)
+Text = "a new update for the Place! "; -- what the text says (ofc)
+Duration = 5; -- how long the notification should in secounds
+})
+
+wait(5)
 --place list
 if game.PlaceId == 142823291 then
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/eplice/main/hub"))()
