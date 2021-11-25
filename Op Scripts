@@ -1,3 +1,11 @@
+
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+Title = "New Update"; -- the title (ofc)
+Text = "I have a new update für the Place! "; -- what the text says (ofc)
+Duration = 5; -- how long the notification should in secounds
+})
+
 --place list
 if game.PlaceId == 142823291 then
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/eplice/main/hub"))()
@@ -26,6 +34,62 @@ mainSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
 end)
 
+mainSection:NewButton("Big head", "https://www.roblox.com/catalog/2492679490/City-Life-Woman-Head", function()
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+function rm()
+    for i,v in pairs(Character:GetDescendants()) do
+        if v:IsA("BasePart") then
+            if v.Name == "Handle" or v.Name == "Head" then
+                if Character.Head:FindFirstChild("OriginalSize") then
+                    Character.Head.OriginalSize:Destroy()
+                end
+            else
+                for i,cav in pairs(v:GetDescendants()) do
+                    if cav:IsA("Attachment") then
+                        if cav:FindFirstChild("OriginalPosition") then
+                            cav.OriginalPosition:Destroy()
+                        end
+                    end
+                end
+                v:FindFirstChild("OriginalSize"):Destroy()
+                if v:FindFirstChild("AvatarPartScaleType") then
+                    v:FindFirstChild("AvatarPartScaleType"):Destroy()
+                end
+            end
+        end
+    end
+end
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyHeightScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("HeadScale"):Destroy()
+wait(1)
+    print("Clicked")
+end)
+
 --Scripts--
 local Scripts = Window:NewTab("Script's")
 local ScriptsSection = Scripts:NewSection("Scripts")
@@ -44,6 +108,8 @@ ScriptsSection:NewButton("Infinitie Yield", "this is a admin script", function()
     print("Clicked")
 end)
 
+if game.PlaceId == 192800 then
+
 ScriptsSection:NewButton("Pizza place gui", "Turk0yun Scripts", function()
         loadstring(game:HttpGet("https://gist.githubusercontent.com/TurkOyuncu99/bb2f1182a224999682a2d1a87aa8517a/raw/66c7791224be0434b23938ca26244238649d0143/ameicaa", true))()
     print("Clicked")
@@ -55,6 +121,9 @@ ScriptsSection:NewButton("Mm2 gui", "Turk0yun Scripts", function()
         loadstring(game:HttpGet("https://gist.githubusercontent.com/TurkOyuncu99/16d946bfe0a0ed98a8e32de362fd4217/raw/0681fa979da042841f4e71a52490fdc3a2a16376/cac", true))()
     print("Clicked")
 end)
+
+if game.PlaceId == 2414851778 then
+
 
 ScriptsSection:NewButton("Dungeon Quest", "Dungeon Quest Gui script", function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Solx69/Shit-Boy-Hub-Main/main/Master.lua'))();
@@ -130,7 +199,7 @@ local creditsSection = credits:NewSection("Credits S3nKeTsu#6565")
 creditsSection:NewLabel("This is a new gui updated! from SenKeTs")
 
 local Update = {
-  "11/13/2021",
+  "11/25/2021",
 }
 
 local dropdown = creditsSection:NewDropdown("Update!","here can you see the update date!", Update, function()
