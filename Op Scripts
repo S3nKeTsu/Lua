@@ -112,7 +112,7 @@ if game.PlaceId == 142823291 then
 end
 
 if game.PlaceId == 142823291 then
-     ScriptsSection:NewButton("Eplice Hub!", "Eplice hub from", function()
+     ScriptsSection:NewButton("Eplice Hub!", "Eplice hub from £thanoj1#3304", function()
            loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/eplice/main/hub"))()
     print("Clicked")
      end)
