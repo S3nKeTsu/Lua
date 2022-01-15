@@ -133,7 +133,7 @@ if game.PlaceId == 2788229376 then
      end)
 end
 --pet sim x--
-if game.PlaceId == 1599679393 then
+if game.PlaceId == 6284583030 then
      ScriptsSection:NewButton("Pet simmulator x", "this is the Pet simulator x Gui!", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/si1nnx/psxx/main/g"))()
      print("Clicked")
