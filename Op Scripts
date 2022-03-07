@@ -14,7 +14,7 @@ Duration = 5; -- how long the notification should in secounds
 })
 
 wait(5)
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/Library/main/Libray"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("SEnKeTs Hub", "DarkTheme")
 
 --Main--
