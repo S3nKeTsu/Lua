@@ -103,6 +103,13 @@ if game.PlaceId == 192800 then
       print("Clicked")
      end)
 end
+
+if game.PlaceId == 192800 then
+     ScriptsSection:NewButton("Auto farm", "new Auto Farm", function()
+          loadstring(game:HttpGet("", true))()
+      print("Clicked")
+     end)
+end
 --mm2--
 if game.PlaceId == 142823291 then
      ScriptsSection:NewButton("Turk0yun gui", "this for murder mystery 2", function()
