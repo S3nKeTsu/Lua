@@ -9,7 +9,7 @@ Duration = 5; -- how long the notification should in secounds
 wait(2)
 game.StarterGui:SetCore("SendNotification", {
 Title = "New Update"; -- the title (ofc)
-Text = "a new update for the Place! "; -- what the text says (ofc)
+Text = "new update for Work at the pizza place! "; -- what the text says (ofc)
 Duration = 5; -- how long the notification should in secounds
 })
 
@@ -106,7 +106,7 @@ end
 
 if game.PlaceId == 192800 then
      ScriptsSection:NewButton("Auto farm", "new Auto Farm", function()
-          loadstring(game:HttpGet("", true))()
+          loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/Roblox/main/Pizza%20place", true))()
       print("Clicked")
      end)
 end
