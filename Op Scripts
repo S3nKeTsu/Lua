@@ -211,7 +211,7 @@ local creditsSection = credits:NewSection("Credits S3nKeTsu#6565")
 creditsSection:NewLabel("This is a new gui updated! from SenKeTs")
 
 local Update = {
-  "11/25/2021",
+  "03/07/2022",
 }
 
 local dropdown = creditsSection:NewDropdown("Update!","here can you see the update date!", Update, function()
@@ -220,6 +220,7 @@ end)
 local UpdatePizza = {
   "*Turk0yun Gui",
   "*Teleports"
+  "*New Auto farm"
   
 }
 
