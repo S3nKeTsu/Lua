@@ -6,6 +6,34 @@ local Window = Library.CreateLib("SEnKeTs Hub", "DarkTheme")
 local main = Window:NewTab("Main")
 local mainSection = main:NewSection("Main")
 
+
+if game.PlaceId == 192800 then
+mainSection:NewTextBox("Chat Spamer", "", function(txt)
+    print(txt)
+        local args = {
+        [1] = txt,
+        [2] = false
+    }
+    
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+
+end)
+
+
 mainSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
      game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
 end)
@@ -132,43 +160,4 @@ local Settings = Window:NewTab("Settings")
 local SettingsSection = Settings:NewSection("Settings")
 
 SettingsSection:NewKeybind("ToggleGui", "Set you toggle gui key", Enum.KeyCode.F, function()	Library:ToggleUI()end)
-
---credits
-local credits = Window:NewTab("Credits")
-local creditsSection = credits:NewSection("Credits S3nKeTsu#6565")
-
-creditsSection:NewLabel("This is a new gui updated! from SenKeTs")
-
-local Update = {
-  "03/07/2022",
-}
-
-local dropdown = creditsSection:NewDropdown("Update!","here can you see the update date!", Update, function()
-end)
-
-local UpdatePizza = {
-  "*Turk0yun Gui",
-  "*Teleports"
-  "*New Auto farm"
-  
-}
-
-local dropdown = creditsSection:NewDropdown("new Pizza place","here see you the Work at the Pizza Place Update!", UpdatePizza, function()
-end)
-
-local Updatemm2 = {
-  "*Turk0yun Gui",
-  "*Eplice Hub"
-  
-}
-
-local dropdown = creditsSection:NewDropdown("new Murder mystery 2","here see you the murder mystery 2 Update!", Updatemm2, function()
-end)
-
-local Updatedahood = {
-  "*Faded Gui",
-  
-}
-
-local dropdown = creditsSection:NewDropdown("new Da hood","here see you the Da Hood Update!", Updatedahood, function()
-end)
+end
