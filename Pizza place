@@ -272,7 +272,7 @@ closeBtn.MouseEnter:Connect(function() closeBtn.TextColor3=Color3.new(.9,0,0) en
 closeBtn.MouseLeave:Connect(function() closeBtn.TextColor3=Color3.new(1,1,1) end)
 saveBtn.MouseButton1Click:Connect(function()
 	if writefile and messageLbl.Visible==false then
-		writefile("PizzaFarm.txt",game:GetService("HttpService"):JSONEncode(settings))
+		writefile("Work at the Pizza place Farm.txt",game:GetService("HttpService"):JSONEncode(settings))
 		messageLbl.Visible=true
 		wait(2)
 		messageLbl.Visible=false
@@ -923,3 +923,4 @@ while gui.Parent do
 		end
 	end
 end
+
