@@ -62,7 +62,7 @@ if game.PlaceId == 192800 then
 end
 
 if game.PlaceId == 192800 then
-     ScriptsSection:NewButton("new Auto Farm", "Deliver not working lol", function()
+     ScriptsSection:NewButton("new Auto Farm", "its working! but slow", function()
           loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/Roblox/main/Pizza%20place", true))()
       print("Clicked")
      end)
