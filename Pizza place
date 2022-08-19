@@ -1,4 +1,4 @@
-
+--https://v3rmillion.net/showthread.php?tid=723696
 getupvalues = getupvalues or debug.getupvalues
 setupvalue = setupvalue or debug.setupvalue
 if not (getrawmetatable and getupvalues and setupvalue and (getreg or debug.getregistry)) then
@@ -8,11 +8,11 @@ if not (getrawmetatable and getupvalues and setupvalue and (getreg or debug.getr
 	h:Destroy()
 	return
 end
-local settings = {refill_at=50, refill_end=97, deliver_at=10, stay_in_kitchen=true}
+local settings = {refill_at=0, refill_end=60, deliver_at=24, stay_in_kitchen=true}
 local doCashier,doBoxer,doCook,doSupplier,doDelivery = true,true,true,true,true
 if readfile then
 	pcall(function()
-		local new = game:GetService("HttpService"):JSONDecode(readfile("Work at the Pizza Place Farm.txt"))
+		local new = game:GetService("HttpService"):JSONDecode(readfile("PizzaFarm.txt"))
 		--corruption?
 		local doOverwrite=false
 		for k,v in pairs(new) do
@@ -30,7 +30,7 @@ if readfile then
 		--use input
 		if doOverwrite then
 			warn("Settings overwritten")
-			writefile("Work at the Pizza Place Farm.txt",game:GetService("HttpService"):JSONEncode(new))
+			writefile("PizzaFarm.txt",game:GetService("HttpService"):JSONEncode(new))
 		end
 		settings = new
 	end)
@@ -93,7 +93,7 @@ main=Create("Frame",gui,{Name="main", Draggable=true, Active=true, Size=UDim2.ne
 topbar=Create("Frame",main,{Name="topbar", Size=UDim2.new(1,0,0.15,0), BackgroundColor3=Color3.new(0.255,0.255,0.255)})
 closeBtn=Create("TextButton",topbar,{Name="closeBtn", TextWrapped=true, Size=UDim2.new(0.03,0,1,0), TextColor3=Color3.new(1,1,1), Text="X", BackgroundTransparency=1, 
 	Font="GothamSemibold", Position=UDim2.new(0.96,0,0,0), TextSize=14, TextScaled=true, BackgroundColor3=Color3.new(1,1,1)})
-titleLbl=Create("TextLabel",topbar,{Name="titleLbl", TextWrapped=true, Size=UDim2.new(0.5,0,1,0), Text="Work at the Pizza Place Farm", TextSize=14, Font="GothamSemibold", 
+titleLbl=Create("TextLabel",topbar,{Name="titleLbl", TextWrapped=true, Size=UDim2.new(0.5,0,1,0), Text="Pizza Factory", TextSize=14, Font="GothamSemibold", 
 	BackgroundTransparency=1, Position=UDim2.new(0.25,0,0,0), TextColor3=Color3.new(1,1,1), BackgroundColor3=Color3.new(1,1,1)})
 saveBtn=Create("ImageButton",topbar,{Name="saveBtn", Image="rbxassetid://55687833", Size=UDim2.new(0.05,0,1,0), Position=UDim2.new(0.01,0,0,0), BackgroundTransparency=1, BackgroundColor3=Color3.new(), Visible=writefile~=nil})
 settings_1=Create("Frame",main,{Name="settings", BackgroundTransparency=1, Size=UDim2.new(0.97,0,0.75,0), Position=UDim2.new(0.025,0,0.2,0), BackgroundColor3=Color3.new(1,1,1)})
@@ -150,7 +150,7 @@ rightCamBtn=Create("ImageButton",camframe,{Name="rightCamBtn", Image="rbxassetid
 	BackgroundColor3=Color3.new(1,1,1)})
 leftCamBtn=Create("ImageButton",camframe,{Name="leftCamBtn", Image="rbxassetid://144168163", Size=UDim2.new(0.333,0,1,0), BackgroundTransparency=1, BackgroundColor3=Color3.new(1,1,1)})
 centerCamBtn=Create("ImageButton",camframe,{Name="centerCamBtn", Image="rbxassetid://58282192", Size=UDim2.new(0.333,0,1,0), Position=UDim2.new(0.333,0,0,0), BackgroundTransparency=1, BackgroundColor3=Color3.new(1,1,1)})
-creditLbl=Create("TextLabel",main,{Position=UDim2.new(0,0,1,5),Size=UDim2.new(0,100,0,15),BackgroundTransparency=1,TextColor3=Color3.new(1,1,1),Text="by 9Dabour6",TextScaled=true,TextStrokeTransparency=.8})
+creditLbl=Create("TextLabel",main,{Position=UDim2.new(0,0,1,5),Size=UDim2.new(0,100,0,15),BackgroundTransparency=1,TextColor3=Color3.new(1,1,1),Text="by sirelKilla",TextScaled=true,TextStrokeTransparency=.8})
 
 local function toggleCashier(bool)
 	if bool~=nil then
@@ -272,7 +272,7 @@ closeBtn.MouseEnter:Connect(function() closeBtn.TextColor3=Color3.new(.9,0,0) en
 closeBtn.MouseLeave:Connect(function() closeBtn.TextColor3=Color3.new(1,1,1) end)
 saveBtn.MouseButton1Click:Connect(function()
 	if writefile and messageLbl.Visible==false then
-		writefile("Work at the Pizza Place Farm.txt",game:GetService("HttpService"):JSONEncode(settings))
+		writefile("PizzaFarm.txt",game:GetService("HttpService"):JSONEncode(settings))
 		messageLbl.Visible=true
 		wait(2)
 		messageLbl.Visible=false
@@ -528,21 +528,7 @@ local function smoothTP2(cf)
 	workspace.Gravity = oldg
 end
 local function smoothTP(cf)
-    if (cf.p-root.Position).Magnitude > 95 then
-        local btns = workspace.JobButtons:GetChildren()
-        if player:FindFirstChild("House") and player.House.Value then
-            btns[#btns+1] = player.House.Value:FindFirstChild("Marker") 
-        end
-        table.sort(btns,function(a,b) return (a.Position-cf.p).Magnitude < (b.Position-cf.p).Magnitude end)
-        if (btns[1].Position-cf.p).Magnitude < (cf.p-root.Position).Magnitude then
-            game:GetService("ReplicatedStorage").PlayerChannel:FireServer("TeleportToJob", ((btns[1].Name == "Marker") and "House" or btns[1].Name))
-            wait(0.7)
-            if (cf.p-root.Position).Magnitude < 8 then
-                return
-            end
-        end
-    end
-    smoothTP2(cf)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cf
 end
 for _,o in ipairs(workspace.Ovens:GetChildren()) do
 	if ffc(o,"Bottom") then
@@ -922,5 +908,3 @@ while gui.Parent do
 			--smoothTP(oldcf)
 		end
 	end
-end
-
