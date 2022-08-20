@@ -7,7 +7,7 @@ local main = Window:NewTab("Main")
 local mainSection = main:NewSection("Main")
 
 
-if game.PlaceId == 192800 then
+
 mainSection:NewTextBox("Chat Spamer", "", function(txt)
     print(txt)
         local args = {
@@ -979,7 +979,6 @@ end
 
 
 --------------------------------------------------------------------------------------------------
-if game.PlaceId == 192800 then
      --Teleport--
      local Teleport = Window:NewTab("Teleport")
      local TeleportSection = Teleport:NewSection("Teleports")
@@ -1035,3 +1034,5 @@ local SettingsSection = Settings:NewSection("Settings")
 
 SettingsSection:NewKeybind("ToggleGui", "Set you toggle gui key", Enum.KeyCode.F, function()	Library:ToggleUI()end)
 end
+
+local Auth
