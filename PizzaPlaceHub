@@ -1,5 +1,70 @@
 
-getupvalues = getupvalues or debug.getupvalues
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("SEnKeTs Hub", "DarkTheme")
+
+--Main--
+local main = Window:NewTab("Main")
+local mainSection = main:NewSection("Main")
+
+
+
+mainSection:NewTextBox("Chat Spamer", "", function(txt)
+    print(txt)
+        local args = {
+        [1] = txt,
+        [2] = false
+    }
+    
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+    workspace.Main.Chatted:FireServer(unpack(args))
+
+end)
+
+
+mainSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
+     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+
+mainSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+end)
+
+--Scripts--
+local Scripts = Window:NewTab("Script's")
+local ScriptsSection = Scripts:NewSection("Scripts")
+
+
+--admin--
+ScriptsSection:NewButton("Infinitie Yield", "this is a admin script", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    print("Clicked")
+end)
+
+--pizza place--
+if game.PlaceId == 192800 then
+     ScriptsSection:NewButton("Pizza place gui", "Turk0yun Scripts", function()
+          loadstring(game:HttpGet("https://gist.githubusercontent.com/TurkOyuncu99/bb2f1182a224999682a2d1a87aa8517a/raw/66c7791224be0434b23938ca26244238649d0143/ameicaa", true))()
+      print("Clicked")
+     end)
+end
+
+if game.PlaceId == 192800 then
+     ScriptsSection:NewButton("new Auto Farm", "its working! but slow", function()
+          getupvalues = getupvalues or debug.getupvalues
 setupvalue = setupvalue or debug.setupvalue
 if not (getrawmetatable and getupvalues and setupvalue and (getreg or debug.getregistry)) then
 	local h = Instance.new("Hint",workspace)
@@ -908,3 +973,65 @@ while gui.Parent do
 			--smoothTP(oldcf)
 		end
 	end
+end
+      print("Clicked")
+     end)
+end
+
+
+--------------------------------------------------------------------------------------------------
+     --Teleport--
+     local Teleport = Window:NewTab("Teleport")
+     local TeleportSection = Teleport:NewSection("Teleports")
+
+     TeleportSection:NewButton("Home", "teleport to your house", function()
+         local args = {
+         [1] = "TeleportHome"
+     }
+
+     game:GetService("ReplicatedStorage").PlayerChannel:FireServer(unpack(args))
+         print("Clicked")
+     end)
+
+     TeleportSection:NewButton("Starting Zone", "teleport your Starting Zone", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(49, 3, 198)
+         print("Clicked")
+     end)
+
+     TeleportSection:NewButton("Cashier Area", "teleport your Cashier Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(48, 4, 80)
+         print("Clicked")
+     end)
+
+     TeleportSection:NewButton("Cook Area", "teleport your Cook Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(42, 4, 61)
+     end)
+
+
+     TeleportSection:NewButton("Manager Area", "teleport your Manager Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(37, 4, 3)
+         print("Clicked")
+     end)
+
+     TeleportSection:NewButton("Boxer Area", "teleport your Boxer Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(55, 4, 31)
+         print("Clicked")
+     end)
+
+     TeleportSection:NewButton("Supplier Area", "teleport your Supplier Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8, 13, -1020)
+         print("Clicked")
+     end)
+
+     TeleportSection:NewButton("Delivery Area", "teleport your Delivery Area", function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(64, 4, -17)
+         print("Clicked")
+     end)
+end
+
+--Settings
+local Settings = Window:NewTab("Settings")
+local SettingsSection = Settings:NewSection("Settings")
+
+SettingsSection:NewKeybind("ToggleGui", "Set you toggle gui key", Enum.KeyCode.F, function()	Library:ToggleUI()end)
+end
