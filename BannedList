@@ -1,8 +1,8 @@
 
-local BannUsers = {""}
+local BannedUsers = {""}
 
-function isAuth(user)
-    for i, v in ipairs(AuthUsers) do
+function isBanned(user)
+    for i, v in ipairs(BannedUsers) do
         if v == user then
             return false
         end
@@ -10,7 +10,7 @@ function isAuth(user)
     return true
 end
 
-if isAuth(game.Players.LocalPlayer.Name) then
+if isBanned(game.Players.LocalPlayer.Name) then
     print("your are Banned")
 else 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/Roblox/main/PizzaPlaceHub"))()
