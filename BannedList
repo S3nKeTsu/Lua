@@ -1,8 +1,8 @@
 
-local BannedUsers = {""}
+local bannedUsers = {""}
 
 function isBanned(user)
-    for i, v in ipairs(BannedUsers) do
+    for i, v in ipairs(bannedUsers) do
         if v == user then
             return true
         end
