@@ -4,10 +4,10 @@ local BannedUsers = {""}
 function isBanned(user)
     for i, v in ipairs(BannedUsers) do
         if v == user then
-            return false
+            return true
         end
     end
-    return true
+    return false
 end
 
 if isBanned(game.Players.LocalPlayer.Name) then
