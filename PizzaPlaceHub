@@ -1,6 +1,6 @@
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
-local X = Material.Load({
+local L = Material.Load({
     Title = "Pizza Place Hub",
     Style = 3,
     SizeX = 500,
@@ -8,22 +8,23 @@ local X = Material.Load({
     Theme = "Dark"
 })
 
-local M = X.New({
+local M = L.New({
     Title = "Main"
 })
 
-local T = X.New({
+local T = L.New({
     Title = "Teleport's"
 })
 
-local S = X.New({
+local S = L.New({
     Title = "Script's"
 })
+
 
 local A = M.Button({
     Text = "Become Manager",
     Callback = function()
-    --by sirelKilla (v3rm)
+
  
 --vars
 local Players = game:GetService("Players")
@@ -125,41 +126,42 @@ player.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFr
  
 })
 
-local Chat Spam = M.TextField({
+
+
+	
+	
+local Chat = M.TextField({
     Text = "Chat Spam",
     Callback = function(txt)
-    local args = {
-        [1] = txt,
-        [2] = false
-    }
+    _G.Enabled = true 
+    local msg = txt 
     
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
-    workspace.Main.Chatted:FireServer(unpack(args))
+    if _G.Enabled == true then
+    while _G.Enabled do
+    wait(0.3)
+    game.Workspace.Main.Chatted:FireServer(msg)
+    end
+    end
 
- 
-    end,
-    
-    Menu = {
-        Information = function(self)
-            X.Banner({
-                Text = "Chat Spammer"
-            })
-        end
-    }
+ end,
 })
+
+local Chat = M.Button({
+    Text = "Chat Spam Stop",
+    Callback = function(txt)
+    _G.Enabled = false 
+    local msg = txt 
+    
+    if _G.Enabled == true then
+    while _G.Enabled do
+    game.Workspace.Main.Chatted:FireServer(msg)
+    end
+    end
+
+ end,
+})
+
+
 
 local C = M.Slider({
     Text = "WalkSpeed",
@@ -185,11 +187,39 @@ local C = M.Slider({
 
 
 
-
-
-
-
-
+local A = M.Button({
+    Text = "Click Teleport",
+    Callback = function()
+    local Plr = game:GetService("Players").LocalPlayer
+    local Mouse = Plr:GetMouse()
+    Mouse.Button1Down:connect(function()
+    if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
+    if not Mouse.Target then return end
+    Plr.Character:MoveTo(Mouse.Hit.p)
+    end)
+    end,
+    	Menu = {
+        Information = function(self)
+            UI.Banner({
+                Text = "Press Ctrl for Teleport"            
+            })
+        end,
+    }
+ 
+})
+local A = M.Button({
+    Text = "Infinite Jump",
+    Callback = function()
+    local InfiniteJumpEnabled = true
+    game:GetService("UserInputService").JumpRequest:connect(function()
+       if InfiniteJumpEnabled then
+           game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+       end
+    end)
+    end,
+ 
+})
+	
 
 
 
@@ -1197,5 +1227,11 @@ while gui.Parent do
 	end
 end
     end,
- 
+	Menu = {
+        Information = function(self)
+            UI.Banner({
+                Text = "This Autofarm its Working! and its fast!"            
+            })
+        end,
+    }
 })
