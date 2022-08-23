@@ -259,21 +259,7 @@ local A = M.Button({
     end,
  
 })
-local A = M.Button({
-    Text = "Stop Infinite Jump",
-    Callback = function()
-    local InfiniteJumpEnabled = false
-    game:GetService("UserInputService").JumpRequest:connect(function()
-       if InfiniteJumpEnabled then
-           game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-       end
-    end)
-    end,
- 
-})	
-
-
-
+	
 
 
 --Teleports--
