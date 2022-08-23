@@ -1222,13 +1222,11 @@ while gui.Parent do
 	end
 end
     end,
-            Menu = {
-                Information = function(self)
-                    X.Banner({
-                        Text = "this Auto Farm working and its fast!."
-                    })
-                end
-            }
-        }
+    Menu = {
+        Information = function(self)
+            X.Banner({
+                Text = "This Autofarm Working and its fast!"
+            })
+        end
     }
 })
