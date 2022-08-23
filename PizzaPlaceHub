@@ -144,6 +144,7 @@ local Chat = M.TextField({
     end
 
  end,
+
 })
 
 local Chat = M.Button({
@@ -1221,11 +1222,13 @@ while gui.Parent do
 	end
 end
     end,
-	Menu = {
-        Information = function(self)
-            UI.Banner({
-                Text = "This Autofarm its Working! and its fast!"            
-            })
-        end,
+            Menu = {
+                Information = function(self)
+                    X.Banner({
+                        Text = "this Auto Farm working and its fast!."
+                    })
+                end
+            }
+        }
     }
 })
