@@ -161,7 +161,7 @@ local Chat = M.TextField({
 	Menu = {
         Information = function(self)
             L.Banner({
-                Text = "Pizza Place Chat Spammer"            
+                Text = "the Work at the Pizza Place Chat Spam"            
             })
         end,
     }
@@ -183,7 +183,7 @@ local Chat = M.Button({
 	Menu = {
         Information = function(self)
             L.Banner({
-                Text = "Stoped the chat spammer"            
+                Text = "Stoped the chat spam"            
             })
         end,
     }
