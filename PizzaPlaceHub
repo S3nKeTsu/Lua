@@ -1,3 +1,16 @@
+
+workspace.MessageService.Dialog.Dialog:Fire("Credits", "K0RoS3nPa1#9470", "ok", "", true,
+        true)
+
+    
+
+wait()
+game.StarterGui:SetCore("SendNotification", {
+Title = "New Update"; -- the title (ofc)
+Text = "08/23/2022"; -- what the text says (ofc)
+Duration = 5; -- how long the notification should in secounds
+})
+
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
 local L = Material.Load({
