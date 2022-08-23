@@ -14,6 +14,7 @@ local M = L.New({
 
 local T = L.New({
     Title = "Teleport's"
+    
 })
 
 local S = L.New({
@@ -138,17 +139,23 @@ local Chat = M.TextField({
     
     if _G.Enabled == true then
     while _G.Enabled do
-    wait(0.3)
+    wait(0.4)
     game.Workspace.Main.Chatted:FireServer(msg)
     end
     end
 
  end,
-
+	Menu = {
+        Information = function(self)
+            L.Banner({
+                Text = "Pizza Place Chat Spammer"            
+            })
+        end,
+    }
 })
 
 local Chat = M.Button({
-    Text = "Chat Spam Stop",
+    Text = "Spam Stop",
     Callback = function(txt)
     _G.Enabled = false 
     local msg = txt 
@@ -159,7 +166,14 @@ local Chat = M.Button({
     end
     end
 
- end,
+    end,
+	Menu = {
+        Information = function(self)
+            L.Banner({
+                Text = "Stoped the chat spammer"            
+            })
+        end,
+    }
 })
 
 
@@ -186,6 +200,18 @@ local C = M.Slider({
     
 })
 
+local C = M.Slider({
+    Text = "Gravity",
+    Callback = function(v)
+        game.Workspace.Gravity = v
+    end,
+
+    Min = 0,
+    Max = 200,
+    Def = 200
+    
+})
+
 
 
 local A = M.Button({
@@ -201,7 +227,7 @@ local A = M.Button({
     end,
     	Menu = {
         Information = function(self)
-            UI.Banner({
+            L.Banner({
                 Text = "Press Ctrl for Teleport"            
             })
         end,
@@ -1224,9 +1250,10 @@ end
     end,
     Menu = {
         Information = function(self)
-            X.Banner({
+            L.Banner({
                 Text = "This Autofarm Working and its fast!"
             })
         end
     }
 })
+
