@@ -1,0 +1,265 @@
+
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Pizza Place Hub", HidePremium = true, SaveConfig = false, ConfigFolder = "Pizza Hub", IntroEnabled = true, IntroText = "Work at the Pizza Place /Pizza Place Hub", })
+
+
+
+OrionLib:MakeNotification({
+	Name = "Ui Library",
+	Content = "YES!! it's here, that new ui library!",
+	Time = 5
+})
+
+
+
+
+
+
+
+
+
+
+
+
+local M = Window:MakeTab({
+	Name = "Main",
+	PremiumOnly = false
+})
+
+local S = Window:MakeTab({
+	Name = "Scripts",
+	PremiumOnly = false
+})
+
+local T = Window:MakeTab({
+	Name = "Teleports",
+	PremiumOnly = false
+})
+
+local I = Window:MakeTab({
+	Name = "Info",
+	PremiumOnly = false
+})
+local Section = M:AddSection({
+	Name = "Main"
+})
+
+--Main--
+
+M:AddParagraph("Commands Creator's","Vin#9999 and lil squeasy#1625")
+
+ M:AddButton({
+    Name = "Commands",
+    Icon = "0",
+    Callback = function()
+    spawn(loadstring(game:HttpGet("https://raw.githubusercontent.com/incognitototo/sda/main/dwa.lua",true)))
+end
+})
+
+M:AddLabel("Work at the Pizza Place Chat Spam")
+M:AddTextbox({
+	Name = "Chat Spam",
+	TextDisappear = true,
+	Icon = "rbxassetid://5654616444",
+	Callback = function(txt)
+	OrionLib:MakeNotification({
+	Name = "Chat",
+	Content = "the spamming is on!",
+	Time = 4
+	})
+    _G.Enabled = true 
+    local msg = txt 
+	   
+ 
+    if _G.Enabled == true then
+    while _G.Enabled do
+    wait(0.4)
+    game.Workspace.Main.Chatted:FireServer(msg)
+    end
+    end	
+
+	end	 
+
+})
+
+M:AddButton({
+	Name = "Stop",
+	Icon = "",
+	Callback = function(txt)
+    OrionLib:MakeNotification({
+	Name = "Chat",
+	Content = "the spamming is Off!",
+	Time = 4
+	})
+	_G.Enabled = false 
+    local msg = txt 
+	   
+ 
+    if _G.Enabled == true then
+    while _G.Enabled do
+    wait(0.4)
+    game.Workspace.Main.Chatted:FireServer(msg)
+    end
+    end	
+  	end    
+})
+
+M:AddLabel("Slider's")
+M:AddSlider({
+	Name = "WalkSpeed",
+	Min = 16,
+	Max = 500,
+	Default = 16,
+	Increment = 5,
+	ValueName = "WalkSpeed",
+	Callback = function(W)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = W
+	end    
+})
+
+M:AddSlider({
+	Name = "JumpPower",
+	Min = 50,
+	Max = 500,
+	Default = 50,
+	Increment = 5,
+	ValueName = "JumpPower",
+	Callback = function(J)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = J
+	end    
+})
+
+M:AddSlider({
+	Name = "Gravity",
+	Min = 0,
+	Max = 200,
+	Default = 200,
+	Increment = 5,
+	ValueName = "Gravity",
+	Callback = function(G)
+	game.Workspace.Gravity = G
+	end    
+})
+
+local Section = T:AddSection({
+	Name = "Teleport's"
+})
+--Teleports
+T:AddButton({
+	Name = "Home",
+	Icon = "",
+	Callback = function()
+      		local args = {
+         [1] = "TeleportHome"
+     }
+     game:GetService("ReplicatedStorage").PlayerChannel:FireServer(unpack(args))
+    
+  	end    
+})
+
+T:AddButton({
+	Name = "Starter Zone",
+	Icon = "",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(49, 3, 198)
+    end
+ 
+})
+	
+	
+	T:AddButton({
+	Name = "Cashier Area",
+	Icon = "",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(48, 4, 80)
+    end
+ 
+})
+
+
+
+T:AddButton({
+	Name = "Cook Area",
+	Icon = "",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(42, 4, 61)
+    end,
+ 
+})
+
+
+T:AddButton({
+	Name = "Manager Area",
+	Icon = "",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(37, 4, 3)
+    end
+ 
+})
+	T:AddButton({
+	Name = "Boxer Area",
+	Icon = "",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(55, 4, 31)
+    end
+ 
+})
+
+	
+	T:AddButton({
+	Name = "Supplier Area",
+	Icon = "",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8, 13, -1020)
+    end
+ 
+})
+	
+	T:AddButton({
+	Name = "Delivery Area",
+	Icon = "",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(64, 4, -17)
+    end
+ 
+})
+
+local Section = S:AddSection({
+	Name = "Script's"
+})
+
+     S:AddButton({
+        Name = "Infinitie Yield ",
+        Icon = "",
+        Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end
+     
+})
+
+    S:AddButton({
+        Name = "Pizza Factory ",
+        Icon = "",
+        Callback = function()
+        OrionLib:MakeNotification({
+    	Name = "Pizza Factory",
+    	Content = "It's working and fast!",
+    	Time = 4
+    	})
+              loadstring(game:HttpGet('https://raw.githubusercontent.com/S3nKeTsu/Roblox/main/Factory%20Farm'))()
+        
+    end
+ 
+})
+
+
+--Info
+local Section = I:AddSection({
+	Name = "Info"
+})
+I:AddParagraph("Update","08/25/2022")
+I:AddParagraph("Credits","K0RoS3nPa1#9470")
+
+
