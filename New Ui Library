@@ -1,0 +1,108 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local M = Window:MakeTab({
+	Name = "Main",
+	Icon = "",
+	PremiumOnly = false
+})
+
+local S = Window:MakeTab({
+	Name = "Scripts",
+	Icon = "",
+	PremiumOnly = false
+})
+
+local T = Window:MakeTab({
+	Name = "Teleports",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--Teleports
+T:AddButton({
+	Name = "Home",
+	Callback = function()
+      		local args = {
+         [1] = "TeleportHome"
+     }
+     game:GetService("ReplicatedStorage").PlayerChannel:FireServer(unpack(args))
+    
+  	end    
+})
+
+T:AddButton({
+	Name = "Starter Zone",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(49, 3, 198)
+    end
+ 
+})
+	
+	
+	T:AddButton({
+	Name = "Cashier Area",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(48, 4, 80)
+    end
+ 
+})
+
+
+
+T:AddButton({
+	Name = "Cook Area",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(42, 4, 61)
+    end,
+ 
+})
+
+
+T:AddButton({
+	Name = "Manager Area",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(37, 4, 3)
+    end
+ 
+})
+	T:AddButton({
+	Name = "Boxer Area",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(55, 4, 31)
+    end
+ 
+})
+
+	
+	T:AddButton({
+	Name = "Supplier Area",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8, 13, -1020)
+    end
+ 
+})
+	
+	T:AddButton({
+	Name = "Delivery Area",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(64, 4, -17)
+    end
+ 
+})
+
+ S.Button({
+    Text = "Infinitie Yield ",
+    Callback = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    end
+ 
+})
+
+S.Button({
+    Text = "Pizza Factory ",
+    Callback = function()
+          loadstring(game:HttpGet('https://raw.githubusercontent.com/S3nKeTsu/Roblox/main/Factory%20Farm'))()
+    
+end
+ 
+})
