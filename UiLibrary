@@ -37,11 +37,48 @@ local I = Window:MakeTab({
 	Name = "Info",
 	PremiumOnly = false
 })
-local Section = M:AddSection({
+local M = M:AddSection({
 	Name = "Main"
 })
 
 --Main--
+
+M:AddSlider({
+	Name = "WalkSpeed",
+	Min = 16,
+	Max = 500,
+	Default = 16,
+	Increment = 5,
+	ValueName = "WalkSpeed",
+	Callback = function(W)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = W
+	end    
+})
+
+M:AddSlider({
+	Name = "JumpPower",
+	Min = 50,
+	Max = 500,
+	Default = 50,
+	Increment = 5,
+	ValueName = "JumpPower",
+	Callback = function(J)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = J
+	end    
+})
+
+M:AddSlider({
+	Name = "Gravity",
+	Min = 0,
+	Max = 200,
+	Default = 200,
+	Increment = 5,
+	ValueName = "Gravity",
+	Callback = function(G)
+	game.Workspace.Gravity = G
+	end    
+})
+
  M:AddButton({
     Name = "rejoin",
     Icon = "0",
@@ -50,16 +87,6 @@ local Section = M:AddSection({
 end
 })
 
-M:AddParagraph("Commands Creator's","Vin#9999 and lil squeasy#1625")
-
- M:AddButton({
-    Name = "Commands",
-    Icon = "0",
-    Callback = function()
-    spawn(loadstring(game:HttpGet("https://raw.githubusercontent.com/incognitototo/sda/main/dwa.lua",true)))
-end
-})
-M:AddLabel("Toggles")
 M:AddToggle({
 	Name = "noclip",
 	Default = false,
@@ -78,6 +105,17 @@ M:AddToggle({
     end 
 	  
 })
+
+M:AddParagraph("Commands Creator's","Vin#9999 and lil squeasy#1625")
+
+ M:AddButton({
+    Name = "Commands",
+    Icon = "0",
+    Callback = function()
+    spawn(loadstring(game:HttpGet("https://raw.githubusercontent.com/incognitototo/sda/main/dwa.lua",true)))
+end
+})
+
 
 
 M:AddLabel("Work at the Pizza Place Chat Spam")
@@ -126,43 +164,6 @@ M:AddButton({
     end
     end	
   	end    
-})
-
-M:AddLabel("Slider's")
-M:AddSlider({
-	Name = "WalkSpeed",
-	Min = 16,
-	Max = 500,
-	Default = 16,
-	Increment = 5,
-	ValueName = "WalkSpeed",
-	Callback = function(W)
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = W
-	end    
-})
-
-M:AddSlider({
-	Name = "JumpPower",
-	Min = 50,
-	Max = 500,
-	Default = 50,
-	Increment = 5,
-	ValueName = "JumpPower",
-	Callback = function(J)
-	game.Players.LocalPlayer.Character.Humanoid.JumpPower = J
-	end    
-})
-
-M:AddSlider({
-	Name = "Gravity",
-	Min = 0,
-	Max = 200,
-	Default = 200,
-	Increment = 5,
-	ValueName = "Gravity",
-	Callback = function(G)
-	game.Workspace.Gravity = G
-	end    
 })
 
 
