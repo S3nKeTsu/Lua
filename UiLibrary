@@ -43,6 +43,54 @@ local M = M:AddSection({
 
 --Main--
 
+M:AddLabel("Work at the Pizza Place Chat Spam")
+M:AddTextbox({
+	Name = "Chat Spam",
+	TextDisappear = true,
+	Icon = "rbxassetid://5654616444",
+	Callback = function(txt)
+	OrionLib:MakeNotification({
+	Name = "Chat",
+	Content = "the spamming is on!",
+	Time = 4
+	})
+    _G.Enabled = true 
+    local msg = txt 
+	   
+ 
+    if _G.Enabled == true then
+    while _G.Enabled do
+    wait(0.4)
+    game.Workspace.Main.Chatted:FireServer(msg)
+    end
+    end	
+
+	end	 
+
+})
+
+M:AddButton({
+	Name = "Stop",
+	Icon = "",
+	Callback = function(txt)
+    OrionLib:MakeNotification({
+	Name = "Chat",
+	Content = "the spamming is Off!",
+	Time = 4
+	})
+	_G.Enabled = false 
+    local msg = txt 
+	   
+ 
+    if _G.Enabled == true then
+    while _G.Enabled do
+    wait(0.4)
+    game.Workspace.Main.Chatted:FireServer(msg)
+    end
+    end	
+  	end    
+})
+
 M:AddSlider({
 	Name = "WalkSpeed",
 	Min = 16,
@@ -117,54 +165,6 @@ end
 })
 
 
-
-M:AddLabel("Work at the Pizza Place Chat Spam")
-M:AddTextbox({
-	Name = "Chat Spam",
-	TextDisappear = true,
-	Icon = "rbxassetid://5654616444",
-	Callback = function(txt)
-	OrionLib:MakeNotification({
-	Name = "Chat",
-	Content = "the spamming is on!",
-	Time = 4
-	})
-    _G.Enabled = true 
-    local msg = txt 
-	   
- 
-    if _G.Enabled == true then
-    while _G.Enabled do
-    wait(0.4)
-    game.Workspace.Main.Chatted:FireServer(msg)
-    end
-    end	
-
-	end	 
-
-})
-
-M:AddButton({
-	Name = "Stop",
-	Icon = "",
-	Callback = function(txt)
-    OrionLib:MakeNotification({
-	Name = "Chat",
-	Content = "the spamming is Off!",
-	Time = 4
-	})
-	_G.Enabled = false 
-    local msg = txt 
-	   
- 
-    if _G.Enabled == true then
-    while _G.Enabled do
-    wait(0.4)
-    game.Workspace.Main.Chatted:FireServer(msg)
-    end
-    end	
-  	end    
-})
 
 
 local Section = T:AddSection({
