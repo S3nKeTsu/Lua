@@ -1,25 +1,20 @@
-
-
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
+ OrionLib:MakeNotification({
+    	Name = "Update Data",
+    	Content = "09/08/2022",
+    	Time = 4
+    	})
+
+    	
+wait (0.5)
 local Window = OrionLib:MakeWindow({Name = "Pizza Place Hub", HidePremium = true, SaveConfig = false, ConfigFolder = "Pizza Hub", IntroEnabled = true, IntroText = "Work at the Pizza Place /Pizza Place Hub", })
 
-
-
-OrionLib:MakeNotification({
-	Name = "Ui Library",
-	Content = "YES!! it's here, that new ui library!",
-	Time = 5
-})
-
-
-
-
-
-
-
-
-
+local players = game:GetService("Players")
+local runservice = game:GetService("RunService")
+local player = players.LocalPlayer
+local stepped = runservice.Stepped
+local workspace = game:GetService("Workspace")
 
 
 
@@ -48,6 +43,7 @@ local Section = M:AddSection({
 
 --Main--
 
+
 M:AddParagraph("Commands Creator's","Vin#9999 and lil squeasy#1625")
 
  M:AddButton({
@@ -57,6 +53,26 @@ M:AddParagraph("Commands Creator's","Vin#9999 and lil squeasy#1625")
     spawn(loadstring(game:HttpGet("https://raw.githubusercontent.com/incognitototo/sda/main/dwa.lua",true)))
 end
 })
+M:AddLabel("Toggles")
+M:AddToggle({
+	Name = "noclip",
+	Default = false,
+	Callback = function(status)
+
+
+    noclip = status
+    stepped:Connect(function()
+    pcall(function() if noclip then for i,v in pairs(player.Character:GetChildren()) do
+    if v:IsA("BasePart") then
+    v.CanCollide = false
+    end
+    end end end)
+    end)
+
+    end 
+	  
+})
+
 
 M:AddLabel("Work at the Pizza Place Chat Spam")
 M:AddTextbox({
@@ -141,6 +157,14 @@ M:AddSlider({
 	Callback = function(G)
 	game.Workspace.Gravity = G
 	end    
+})
+M:AddLabel("Rejoin server")
+ M:AddButton({
+    Name = "rejoin",
+    Icon = "0",
+    Callback = function()
+    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
+end
 })
 
 local Section = T:AddSection({
@@ -259,7 +283,5 @@ local Section = S:AddSection({
 local Section = I:AddSection({
 	Name = "Info"
 })
-I:AddParagraph("Update","08/25/2022")
+I:AddParagraph("Update","09/08/2022")
 I:AddParagraph("Credits","K0RoS3nPa1#9470")
-
-
