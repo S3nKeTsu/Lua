@@ -42,7 +42,13 @@ local Section = M:AddSection({
 })
 
 --Main--
-
+ M:AddButton({
+    Name = "rejoin",
+    Icon = "0",
+    Callback = function()
+    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
+end
+})
 
 M:AddParagraph("Commands Creator's","Vin#9999 and lil squeasy#1625")
 
@@ -158,14 +164,7 @@ M:AddSlider({
 	game.Workspace.Gravity = G
 	end    
 })
-M:AddLabel("Rejoin server")
- M:AddButton({
-    Name = "rejoin",
-    Icon = "0",
-    Callback = function()
-    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
-end
-})
+
 
 local Section = T:AddSection({
 	Name = "Teleport's"
