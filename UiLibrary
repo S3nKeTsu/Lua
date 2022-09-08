@@ -42,6 +42,13 @@ local M = M:AddSection({
 })
 
 --Main--
+ M:AddButton({
+    Name = "rejoin",
+    Icon = "0",
+    Callback = function()
+    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
+end
+})
 
 M:AddLabel("Work at the Pizza Place Chat Spam")
 M:AddTextbox({
@@ -127,13 +134,6 @@ M:AddSlider({
 	end    
 })
 
- M:AddButton({
-    Name = "rejoin",
-    Icon = "0",
-    Callback = function()
-    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
-end
-})
 
 M:AddToggle({
 	Name = "noclip",
