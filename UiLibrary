@@ -15,6 +15,44 @@ local runservice = game:GetService("RunService")
 local player = players.LocalPlayer
 local stepped = runservice.Stepped
 local workspace = game:GetService("Workspace")
+local player = game:GetService("Players").LocalPlayer
+local ffc = game.FindFirstChild
+local RNG = Random.new()
+local network
+local character,root,humanoid
+do
+	local reg = (getreg or debug.getregistry)()
+	for i=1,#reg do
+		local f = reg[i]
+		if type(f)=="function" then
+		    for k,v in next,getupvalues(f) do
+				if typeof(v)=="Instance" then
+				    if v.Name=="CashOut" then
+					    setupvalue(f,k,{MouseButton1Click={wait=function()end,Wait=function()end}})
+				    elseif v.Name=="StickerName" then
+				        setupvalue(f,k,nil)
+				    end
+				end
+			end
+    		if tostring(getfenv(f).script) == "Music" then
+    		    local consts = getconstants(f)
+    		    local loc=false
+		        for ci,c in next,consts do
+		            if c == "location changed" then
+		                loc=true
+		            elseif loc and c == "SendData" then
+		                setconstant(f,ci,"ExplodeString")
+		                break
+		            end
+		        end
+    		end
+		elseif type(f)=="table" and rawget(f,"FireServer") and rawget(f,"BindEvents") then
+			network = f
+		end
+	end
+end
+assert(network,"failed to find network")
+
 
 
 
