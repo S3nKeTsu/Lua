@@ -209,14 +209,7 @@ local Section = T:AddSection({
 	Name = "Teleport's"
 })
 --Teleports
-T:AddTextbox({
-	Name = "goto player --enter the full Username--",
-	TextDisappear = true,
-	Callback = function(goto)
- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(goto).Character:WaitForChild("HumanoidRootPart").CFrame
-	end	 
 
-})
 
 T:AddButton({
 	Name = "Home",
