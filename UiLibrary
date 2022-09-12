@@ -2,7 +2,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
  OrionLib:MakeNotification({
     	Name = "Update Data",
-    	Content = "09/08/2022",
+    	Content = "09/12/2022",
     	Time = 4
     	})
 
@@ -210,6 +210,19 @@ local Section = T:AddSection({
 })
 --Teleports
 
+T:AddTextbox({
+	Name = "goto player",
+	TextDisappear = true,
+	Callback = function(G)
+    local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+    local p2 = G
+    local pos = p1.CFrame
+    
+    p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
+    
+	end	 
+
+})
 
 T:AddButton({
 	Name = "Home",
