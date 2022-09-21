@@ -1,5 +1,4 @@
-
-local bannedUsers = {""}
+local bannedUsers = {"regenbogen_einhorn32"}
 
 function isBanned(user)
     for i, v in ipairs(bannedUsers) do
@@ -11,7 +10,7 @@ function isBanned(user)
 end
 
 if isBanned(game.Players.LocalPlayer.Name) then
-    print("your are Banned")
+    game.Players.LocalPlayer:Kick("you have been banned from the script developer );")
 else 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/Roblox/main/UiLibrary"))()
-end 
+end
