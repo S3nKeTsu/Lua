@@ -1,4 +1,4 @@
-local bannedUsers = {"regenbogen_einhorn32"}
+local bannedUsers = {""}
 
 function isBanned(user)
     for i, v in ipairs(bannedUsers) do
