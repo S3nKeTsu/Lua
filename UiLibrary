@@ -53,20 +53,6 @@ do
 end
 assert(network,"failed to find network")
 
-local bn = getrawmetatable(game)
-make_writeable(bn)
-
-local namecall = bn.__namecall
-
-bn.__namecall = newcclosure(function(self, ...)
-    local method = getnamecallmethod()
-    local args = {...}
-
-    if method == "FireServer" and tostring(self) == "PlayerChannel" then
-       return
-    end
-    return namecall(self, table.unpack(args))
-end)
 
 
 local M = Window:MakeTab({
@@ -99,6 +85,33 @@ local M = M:AddSection({
     Callback = function()
     game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
 end
+})
+M:AddButton({
+	Name = "Anti Ban from houses",
+	Icon = "",
+	Callback = function(bn)
+    OrionLib:MakeNotification({
+	Name = "Warning!",
+	Content = "Rooms will not load when entering a house!",
+	Time = 4
+	})
+local bn = getrawmetatable(game)
+make_writeable(bn)
+
+local namecall = bn.__namecall
+
+bn.__namecall = newcclosure(function(self, ...)
+    local method = getnamecallmethod()
+    local args = {...}
+
+    if method == "FireServer" and tostring(self) == "PlayerChannel" then
+       return
+    end
+    return namecall(self, table.unpack(args))
+end)
+
+
+  	end    
 })
 
 M:AddLabel("Work at the Pizza Place Chat Spam")
