@@ -2,7 +2,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
  OrionLib:MakeNotification({
     	Name = "Update Data",
-    	Content = "09/12/2022",
+    	Content = "09/23/2022",
     	Time = 4
     	})
 
