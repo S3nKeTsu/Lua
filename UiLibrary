@@ -219,7 +219,7 @@ M:AddToggle({
 })
 
 M:AddTextbox({
-	Name = "Chat Spam",
+	Name = "Avatar Scale 1-5",
 	TextDisappear = true,
 	Icon = "rbxassetid://5654616444",
 	Callback = function(Number)
