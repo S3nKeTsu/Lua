@@ -222,7 +222,7 @@ M:AddTextbox({
 	Name = "Avatar Scale 1-5",
 	TextDisappear = true,
 	Icon = "rbxassetid://5654616444",
-	Callback = function(number)
+	Callback = function(number,1,2,3,4,5)
 	size = number
 
 	local LocalPlayer = game:GetService("Players").LocalPlayer
