@@ -339,7 +339,7 @@ M:AddTextbox({
 	wait(0.5)
 	Humanoid:FindFirstChild("HeadScale"):Destroy()
 	wait(1)
-	end
+	end)
 
 	end	 
 
