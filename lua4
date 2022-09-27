@@ -1,4 +1,4 @@
--- updated by Vin#9999 originally made by serilKilla
+
 getupvalues = getupvalues or debug.getupvalues
 setupvalue = setupvalue or debug.setupvalue
 if not (getrawmetatable and getupvalues and setupvalue and (getreg or debug.getregistry)) then
