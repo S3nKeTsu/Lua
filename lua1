@@ -12,5 +12,5 @@ end
 if isBanned(game.Players.LocalPlayer.Name) then
     game.Players.LocalPlayer:Kick("you have been banned from the script developer );")
 else 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/Roblox/main/UiLibrary"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/S3nKeTsu/Lua/main/Lua2"))()
 end
