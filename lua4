@@ -2,7 +2,7 @@
 local Release = "V1"
 local NotificationDuration = 6.5
 local RayfieldFolder = "Hub Folder"
-local ConfigurationFolder = Hub Folder.."/Configurations"
+local ConfigurationFolder = HubFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 
 
