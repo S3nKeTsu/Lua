@@ -1,4 +1,4 @@
-	-- updated by zade#1337 originally made by serilKilla
+-- updated by zade#1337 originally made by serilKilla
 -- working as of 18/01/2023
 getupvalues = getupvalues or debug.getupvalues
 setupvalue = setupvalue or debug.setupvalue
@@ -203,7 +203,7 @@ allOffBtn.InputBegan:Connect(function()
 		toggleCook(false)
 		toggleBoxer(false)
 		toggleDelivery(false)
-		
+		toggleSupplier(false)
 		toggleAllSlider:TweenPosition(UDim2.new(0,0,0,-2),nil,"Sine",0.1,true)
 		wait(1)
 		if toggleAllSlider.Position.X.Scale<.01 then
@@ -217,7 +217,7 @@ allOnBtn.InputBegan:Connect(function()
 		toggleCook(true)
 		toggleBoxer(true)
 		toggleDelivery(true)
-		
+		toggleSupplier(true)
 		toggleAllSlider:TweenPosition(UDim2.new(0.9,0,0,-2),nil,"Sine",0.1,true)
 		wait(1)
 		if toggleAllSlider.Position.X.Scale>.88 then
@@ -672,7 +672,7 @@ while gui.Parent do
         wait()
         game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
 	end
-	for zz=1,13 do
+	for zz=1,3 do
 		local c,order = FindFirstCustomer()
 		if doCashier and c and order then
 			local reg = 3
@@ -689,7 +689,7 @@ while gui.Parent do
 		end
 	end
 	tryCook()
-	for zz=1,17 do
+	for zz=1,7 do
 		if doBoxer then
 			local didsomething = false
 			local boxP,boxD = FindBoxingFoods()
