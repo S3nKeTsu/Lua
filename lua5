@@ -1,0 +1,28 @@
+game.Players.LocalPlayer:Kick("\nWelcome by K0Ro Hub...  It's coming soon")
+gui = game.CoreGui.RobloxPromptGui.promptOverlay:WaitForChild("ErrorPrompt")  
+gui.TitleFrame.ErrorTitle.Text = "Rejoin System" 
+gui.Size = UDim2.new(0, 500, 0, 270)
+leaveDe =  gui.MessageArea.ErrorFrame.ButtonArea.VerlassenButton
+leaveEn =  gui.MessageArea.ErrorFrame.ButtonArea.VerlassenButton
+	
+gui.MessageArea.MessageAreaPadding.PaddingTop = UDim.new(0,-20)
+gui.MessageArea.ErrorFrame.ErrorFrameLayout.Padding = UDim.new(0, 5)
+gui.MessageArea.ErrorFrame.ButtonArea.ButtonLayout.CellPadding = UDim2.new(0, 0, 0, 5)
+rejoin = leaveDe:Clone() and leaveDe:Clone()
+rejoin.Parent = leaveDe.Parent and leaveEn.Parent
+rejoin.ButtonText.Text = "Rejoin"
+--ServerHop = leave:Clone()
+--ServerHop.Parent = leave.Parent
+--ServerHop.ButtonText.Text = "Server Hop"
+Players = game:GetService("Players")
+TeleportService = game:GetService("TeleportService")
+rejoin.MouseButton1Up:Connect(function()
+	if #Players:GetPlayers() <= 1 then
+		TeleportService:Teleport(game.PlaceId, Players.LocalPlayer)
+	else
+		TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)
+	end
+end)
+--ServerHop.MouseButton1Up:Connect(function()
+
+--end)
